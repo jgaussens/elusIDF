@@ -1,0 +1,5 @@
+{ "_id" : 1, "Nom" : "Lock-Fat", "Prénom" : "Florian", "Age":"21 ans", "Email":"florianlockfat@gmail.com", "friends" : [
+{ "_id" : 2, "Nom" : "Gaussens", "Prénom" : "Jules", "Age":"21 ans", "Email":"gaussensjules@gmail.com" },
+{ "_id" : 3, "Nom" : "Saxémard", "Prénom" : "Elodie", "Age":"23 ans", "Email":"elodie.saxemard@gmail.com" },
+{ "_id" : 4, "Nom" : "Assié", "Prénom" : "Frédéric", "Age":"32 ans", "Email":"fredassie@free.fr" },
+{ "_id" : 5, "Nom" : "Kissous", "Prénom" : "Marion", "Age":"38 ans", "Email":"saintlomarion@gmail.com" }, ] }
