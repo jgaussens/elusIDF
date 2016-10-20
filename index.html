@@ -14,6 +14,15 @@
 			
 			
 			function partipol(a){
+			var t = document.getElementById("res")
+			t.remove()
+			console.log(t)
+			
+			var newtable = document.createElement("table")
+			newtable.setAttribute("id","res")
+			document.querySelector("#results").appendChild(newtable)
+			const tr1 = document.createElement("tr")
+			document.querySelector("#res").appendChild(tr1)
 			const titre = document.createElement('h1')
 			if (a==='S+%26+R'){
 				b = "S & R"
@@ -36,15 +45,24 @@
 			const t2 = document.createElement('td')
 			const t3 = document.createElement('td')
 			const t4 = document.createElement('td')
+			const t5 = document.createElement('td')
+			const t6 = document.createElement('td')
+
 			t1.innerHTML = "Nom"
 			t2.innerHTML = "Prenom"
 			t3.innerHTML = "Nombre de réunions"
 			t4.innerHTML = "Absences non justifiees"
+			t6.innerHTML = "Taux de présence"
+			t5.innerHTML = "Salaire"
+			
 			document.querySelector("table").appendChild(ti)
 			document.querySelector("#titre").appendChild(t1)
 			document.querySelector("#titre").appendChild(t2)
 			document.querySelector("#titre").appendChild(t3)
 			document.querySelector("#titre").appendChild(t4)
+			document.querySelector("#titre").appendChild(t6)
+			document.querySelector("#titre").appendChild(t5)
+
 
 
 
@@ -53,9 +71,7 @@
 				const tr = document.createElement('tr')
 				var a = result.records[i].fields.nom.substring(0,1) + i  //facon de nommer l'id de chaque TR pour ne pas avoir de conflit
 				tr.setAttribute("id",a)
-				console.log(tr)
 				document.querySelector("table").appendChild(tr)
-				
 				
 				for(var j = 0; j<tab[i].length; j++){
 					if (j===0){
@@ -68,13 +84,18 @@
 					
 						const td = document.createElement('td')
 						td.innerHTML = tab[i][j]
-						console.log(a)
 						document.querySelector("#"+a).appendChild(td)
 					}
-
+					if (j===3){
+						taux(result.records[i].fields.absences_non_justifiees,result.records[i].fields.reunions_1er_semestre_2016,a)
+						salaire(result.records[i].fields.uid_conseiller,a)
+					}
 					
-
+					
 				}
+				
+						
+						
 				
 				
 				
@@ -82,6 +103,26 @@
 				
 			}})})	
 			}
+			function taux(abs,reu,a){
+				var taux = ((reu-abs)/reu) * 100
+				const sal = document.createElement('td')
+				sal.innerHTML = taux.toFixed(2) + "%"
+				document.querySelector("#"+a).appendChild(sal)
+			}
+			
+			function salaire(uid,a){
+						var compt = 0
+						var result2
+						fetch('http://data.iledefrance.fr/api/records/1.0/search/?dataset=indemnites-des-elus-du-conseil-regional&q=uid_conseiller%3D%22'+uid+'%22&facet=groupe_politique&facet=fonction_executif&facet=membre_cp&facet=montant_mensuel_brut').then(function(response){response.json().then(function(data){result2=data
+						const sal = document.createElement('td')
+						sal.innerHTML = result2.records[0].fields.montant_mensuel_brut
+						document.querySelector("#"+a).appendChild(sal)
+							
+						
+						
+						
+						
+				})})}
 			
 			
 			
@@ -125,7 +166,7 @@
 		</div>
 		<div id="results">
 			<h2>Les résultats de votre demande</h2>
-			<table>
+			<table id="res">
 			<tr></tr>
 			</table>
 		</div>
