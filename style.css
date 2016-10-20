@@ -1,0 +1,87 @@
+#header {
+
+	height: 156px;
+	background-color: #03A9F4;
+    padding: 90px 16px 0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 2.5em;
+    
+}
+
+body {
+/*
+	background-color:#263238;
+*/
+	position:relative;
+	font-size:10pt;
+	top:0px;
+	font-family: 'Roboto', sans-serif;
+
+	
+	}
+h1 {
+	font-size:20pt;
+}
+h1 span
+{
+	font-size:10pt;
+	font-style: italic;
+	display: block;
+	color:#81F7F3;
+}
+
+h2 {
+	margin-left:15%;
+	font-size:18pt;
+	text-align:left;
+}
+
+.checkbox
+{
+	margin:0px 0 0 80px;
+}
+.form
+{
+	padding:3px;
+	border:1px solid #F5C5C5;
+	border-radius:5px;
+	width:200px;
+	box-shadow:1px 1px 2px #555555 inset;
+}
+.send
+{
+	padding:3px;
+	border:1px solid #F5C5C5;
+	border-radius:5px;
+	width:200px;
+	box-shadow:1px 1px 2px #555555 inset;
+	margin: 10px;
+	margin-left: 100px;
+}
+#form
+{
+	float:right;
+	border: 1px dotted #F50057;
+	width : 40%;
+	padding: 10px;
+	margin: 10px;
+}
+#menu a:visited
+{
+	text-decoration:none;
+}
+#menu a:hover
+{
+	color:#0ABF7C;
+	text-decoration:none;
+}
+
+
+#titre{
+font-size: 1.3em;
+color: #03A9F4;
+
+	
+}
+
