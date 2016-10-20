@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Les fuckings politiques en IDF</title>
+		<title>Les Politiques En Île-de-France</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 	</head>
 	<body>
@@ -124,6 +125,86 @@
 						
 				})})}
 			
+			function politique(){
+				var a = document.getElementById("nom").value
+				var t = document.getElementById("res")
+				t.remove()
+			
+				var newtable = document.createElement("table")
+				newtable.setAttribute("id","res")
+				document.querySelector("#results").appendChild(newtable)
+				const tr1 = document.createElement("tr")
+				document.querySelector("#res").appendChild(tr1)
+				const tr = document.createElement('tr')
+				document.querySelector("table").appendChild(tr)
+				const t1 = document.createElement('td')
+				const t2 = document.createElement('td')
+				const t3 = document.createElement('td')
+				const t4 = document.createElement('td')
+				const t5 = document.createElement('td')
+				const t6 = document.createElement('td')
+				const ti = document.createElement('tr')
+				ti.setAttribute("id","titre")
+				t1.innerHTML = "Nom"
+				t2.innerHTML = "Prenom"
+				t3.innerHTML = "Nombre de réunions"
+				t4.innerHTML = "Absences non justifiees"
+				t6.innerHTML = "Taux de présence"
+				t5.innerHTML = "Salaire"
+				
+				document.querySelector("table").appendChild(ti)
+				document.querySelector("#titre").appendChild(t1)
+				document.querySelector("#titre").appendChild(t2)
+				document.querySelector("#titre").appendChild(t3)
+				document.querySelector("#titre").appendChild(t4)
+				document.querySelector("#titre").appendChild(t6)
+				document.querySelector("#titre").appendChild(t5)
+				
+				var result
+				fetch('http://data.iledefrance.fr/api/records/1.0/search/?dataset=assiduite-des-elus&q=nom%3D%27'+a+'%27&sort=nom&facet=groupe_politique').then(function(response){response.json().then(function(data){result=data
+				
+				for(var i = 0; i <= result.records.length ; i++){
+					const nom = document.createElement('td')
+					const prenom = document.createElement('td')
+					const reu = document.createElement('td')
+					const abs = document.createElement('td')
+					const taux = document.createElement('td')
+					taux.innerHTML = (((result.records[i].fields.reunions_1er_semestre_2016-result.records[i].fields.absences_non_justifiees)/result.records[i].fields.reunions_1er_semestre_2016) * 100).toFixed(2) + "%"
+					nom.innerHTML = result.records[i].fields.nom
+					prenom.innerHTML = result.records[i].fields.prenom
+					reu.innerHTML = result.records[i].fields.reunions_1er_semestre_2016
+					abs.innerHTML = result.records[i].fields.absences_non_justifiees
+					document.querySelector("#res").appendChild(nom)
+					document.querySelector("#res").appendChild(prenom)
+					document.querySelector("#res").appendChild(reu)
+					document.querySelector("#res").appendChild(abs)
+					document.querySelector("#res").appendChild(taux)
+					const tr = document.createElement('tr')
+					document.querySelector("table").appendChild(tr)
+
+				}
+
+
+
+					
+				
+			
+			
+			
+			
+			
+			
+			
+						
+						
+						
+							
+						
+						
+						
+						
+				})})}
+			
 			
 			
 			
@@ -133,11 +214,15 @@
 			
 			
 		</script>
-		<h1>Petit point sur les politiques en Ile de France<span>c'est mal l'Ile-de-France...</span></h1>
+		<div id="header">
+			Petit point sur les politiques en Ile de France 
+			<img src="fred.png">
+		</div>
 		<div id="form">
 			<h2>Que voulez-vous savoir?</h2>
-			<form name="politics" method="post" action="index.html">
-				Nom : <input type="text" name="nom" class="form" /><br />
+			
+
+				Nom : <input type="text" name="nom" class="form" id="nom"/><input type="button" value="Rechercher ce politique" onclick="politique()" /><br />
 				Parti : 
 					<div class="checkbox">
 					<label><input type="button" name="LR" value="LR" onclick="partipol('LR')" />Les Républicains</label><br />
@@ -149,20 +234,10 @@
 					<label><input type="button" name="FDG" value="FDG" onclick="partipol('FDG')">Front de Gauche</label><br />
 					<label><input type="button" name="RCDE" value="RCDE" onclick="partipol('RCDE')">Radicaux Citoyens Démocrates Ecologistes</label><br />
 					</div>
-				Informations souhaitées : 
-					<div class="checkbox">
-					<label><input type="checkbox" name="revenus" value="revenus" />Revenus</label><br />
-					<label><input type="checkbox" name="assiduite" value="assiduite">Assiduité</label><br />
-					<label><input type="checkbox" name="liste_groupes" value="liste_groupes">Liste des groupes politiques</label><br />
-					<label><input type="checkbox" name="groupe" value="groupe">Groupe</label><br />
-					<label><input type="checkbox" name="liste_membres" value="liste_membres">Liste des membres du groupe</label><br />
-					<label><input type="checkbox" name="salaire_assiduite" value="salaire_assiduite">Rapport salaire / assiduité</label><br />
-					<label><input type="checkbox" name="salaire_parti" value="salaire_parti">Salaire moyen par groupe politique</label><br />
-					<label><input type="checkbox" name="ensemble_presences" value="ensemble_presences">Liste complète des présences</label><br />
-					</div>
-					<input type="submit" value="Balance les infos!" class="send" />
+				
+					
 
-			</form>
+			
 		</div>
 		<div id="results">
 			<h2>Les résultats de votre demande</h2>
