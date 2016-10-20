@@ -1,0 +1,34 @@
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/">
+	<foaf:Person rdf:about="#Flo">
+	  <foaf:fisrtName>Florian</foaf:fisrtName>
+	  <foaf:family_name>Lock-Fat</foaf:family_name>
+	  <foaf:age>22</foaf:age>
+	  <foaf:surname>Floflo</foaf:surname>
+	</foaf:Person>
+	<foaf:Person rdf:about="#Jules">
+	  <foaf:fisrtName>Jules</foaf:fisrtName>
+	  <foaf:family_name>Gaussens</foaf:family_name>
+	  <foaf:age>22</foaf:age>
+	  <foaf:surname>Juuuuuules</foaf:surname>
+	</foaf:Person>
+	<foaf:Person rdf:about="#Elodie">
+	  <foaf:fisrtName>Elodie</foaf:fisrtName>
+	  <foaf:family_name>Saxemard</foaf:family_name>
+	  <foaf:age>24</foaf:age>
+	  <foaf:surname>Hairstyle</foaf:surname>
+	</foaf:Person>
+	<foaf:Person rdf:about="#Marion">
+	  <foaf:fisrtName>Marion</foaf:fisrtName>
+	  <foaf:family_name>Kissous</foaf:family_name>
+	  <foaf:age>76</foaf:age>
+	  <foaf:surname>Mamie</foaf:surname>
+	</foaf:Person>
+	<foaf:Person rdf:about="#Fred">
+	  <foaf:fisrtName>Fred</foaf:fisrtName>
+	  <foaf:family_name>Assie</foaf:family_name>
+	  <foaf:age>unknown</foaf:age>
+	  <foaf:surname>The Ass</foaf:surname>
+	</foaf:Person>
+</rdf:RDF>
