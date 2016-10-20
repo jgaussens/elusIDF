@@ -1,2 +1,1 @@
-# elusIDF
-Projet Intégration données connectées
+Rendu des exercices XML, JSON, RDF, RDFA
