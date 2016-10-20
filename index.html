@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Les fuckings politiques en IDF</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+	</head>
+	<body>
+	<script type="text/javascript">
+			
+			
+			
+			
+			
+			function partipol(a){
+			const titre = document.createElement('h1')
+			if (a==='S+%26+R'){
+				b = "S & R"
+				titre.innerHTML = b}else{
+				titre.innerHTML = a;
+				}
+			
+			document.querySelector("tr").appendChild(titre)
+			var result
+			fetch('http://data.iledefrance.fr/api/records/1.0/search/?dataset=assiduite-des-elus&q=groupe_politique+%3D%22'+a+'%22&facet=groupe_politique&refine.groupe_politique='+a+'&rows=440').then(function(response){response.json().then(function(data){result=data;
+			var tab = []
+			for(var i = 0; i < result.records.length; i++){
+				
+				//var case = new Array(result.records[i].fields.nom,result.records[i].fields.absences_non_justifiees)
+				tab[i] = new Array(result.records[i].fields.nom ,result.records[i].fields.prenom ,result.records[i].fields.reunions_1er_semestre_2016, result.records[i].fields.absences_non_justifiees);
+			}
+			const ti = document.createElement('tr')
+			ti.setAttribute("id","titre")
+			const t1 = document.createElement('td')
+			const t2 = document.createElement('td')
+			const t3 = document.createElement('td')
+			const t4 = document.createElement('td')
+			t1.innerHTML = "Nom"
+			t2.innerHTML = "Prenom"
+			t3.innerHTML = "Nombre de réunions"
+			t4.innerHTML = "Absences non justifiees"
+			document.querySelector("table").appendChild(ti)
+			document.querySelector("#titre").appendChild(t1)
+			document.querySelector("#titre").appendChild(t2)
+			document.querySelector("#titre").appendChild(t3)
+			document.querySelector("#titre").appendChild(t4)
+
+
+
+			for(var i = 0;i<tab.length;i++){
+			
+				const tr = document.createElement('tr')
+				var a = result.records[i].fields.nom.substring(0,1) + i  //facon de nommer l'id de chaque TR pour ne pas avoir de conflit
+				tr.setAttribute("id",a)
+				console.log(tr)
+				document.querySelector("table").appendChild(tr)
+				
+				
+				for(var j = 0; j<tab[i].length; j++){
+					if (j===0){
+							var site = "<a href = https://www.iledefrance.fr/elus/"+result.records[i].fields.prenom+"-"+result.records[i].fields.nom +">"+tab[i][j]+"</a>"
+							const td = document.createElement('td')
+							td.innerHTML = site
+							document.querySelector("#"+a).appendChild(td)
+		
+					}else{
+					
+						const td = document.createElement('td')
+						td.innerHTML = tab[i][j]
+						console.log(a)
+						document.querySelector("#"+a).appendChild(td)
+					}
+
+					
+
+				}
+				
+				
+				
+				
+				
+			}})})	
+			}
+			
+			
+			
+			
+			
+		</script>
+			
+			
+			
+		</script>
+		<h1>Petit point sur les politiques en Ile de France<span>c'est mal l'Ile-de-France...</span></h1>
+		<div id="form">
+			<h2>Que voulez-vous savoir?</h2>
+			<form name="politics" method="post" action="index.html">
+				Nom : <input type="text" name="nom" class="form" /><br />
+				Parti : 
+					<div class="checkbox">
+					<label><input type="button" name="LR" value="LR" onclick="partipol('LR')" />Les Républicains</label><br />
+					<label><input type="button" name="S & R" value="S & R" onclick="partipol('S+%26+R')">Socialistes Républicains</label><br />
+					<label><input type="button" name="UDI" value="UDI" onclick="partipol('UDI')">UDI</label><br />
+					<label><input type="button" name="FN" value="FN" onclick="partipol('FN')">Front National</label><br />
+					<label><input type="button" name="EELVA" value="EELVA" onclick="partipol('EELVA')">Europe Ecologie Les Verts</label><br />
+					<label><input type="button" name="CD" value="CD" onclick="partipol('CD')">Centre et Démocrates</label><br />
+					<label><input type="button" name="FDG" value="FDG" onclick="partipol('FDG')">Front de Gauche</label><br />
+					<label><input type="button" name="RCDE" value="RCDE" onclick="partipol('RCDE')">Radicaux Citoyens Démocrates Ecologistes</label><br />
+					</div>
+				Informations souhaitées : 
+					<div class="checkbox">
+					<label><input type="checkbox" name="revenus" value="revenus" />Revenus</label><br />
+					<label><input type="checkbox" name="assiduite" value="assiduite">Assiduité</label><br />
+					<label><input type="checkbox" name="liste_groupes" value="liste_groupes">Liste des groupes politiques</label><br />
+					<label><input type="checkbox" name="groupe" value="groupe">Groupe</label><br />
+					<label><input type="checkbox" name="liste_membres" value="liste_membres">Liste des membres du groupe</label><br />
+					<label><input type="checkbox" name="salaire_assiduite" value="salaire_assiduite">Rapport salaire / assiduité</label><br />
+					<label><input type="checkbox" name="salaire_parti" value="salaire_parti">Salaire moyen par groupe politique</label><br />
+					<label><input type="checkbox" name="ensemble_presences" value="ensemble_presences">Liste complète des présences</label><br />
+					</div>
+					<input type="submit" value="Balance les infos!" class="send" />
+
+			</form>
+		</div>
+		<div id="results">
+			<h2>Les résultats de votre demande</h2>
+			<table>
+			<tr></tr>
+			</table>
+		</div>
+
+
+	</body>
+</html>
