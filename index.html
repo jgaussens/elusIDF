@@ -42,7 +42,7 @@
 			
 			document.querySelector("tr").appendChild(titre)
 			var result
-			fetch('http://data.iledefrance.fr/api/records/1.0/search/?dataset=assiduite-des-elus&q=groupe_politique+%3D%22'+a+'%22&facet=groupe_politique&refine.groupe_politique='+a+'&rows=440').then(function(response){response.json().then(function(data){result=data;
+			fetch('https://data.iledefrance.fr/api/records/1.0/search/?dataset=assiduite-des-elus&q=groupe_politique+%3D%22'+a+'%22&facet=groupe_politique&refine.groupe_politique='+a+'&rows=440').then(function(response){response.json().then(function(data){result=data;
 			var tab = []
 			for(var i = 0; i < result.records.length; i++){
 				
@@ -132,7 +132,7 @@
 			function salaire(uid,a,pres,abs){
 						var compt = 0
 						var result2
-						fetch('http://data.iledefrance.fr/api/records/1.0/search/?dataset=indemnites-des-elus-du-conseil-regional&q=uid_conseiller%3D%22'+uid+'%22&facet=groupe_politique&facet=fonction_executif&facet=membre_cp&facet=montant_mensuel_brut').then(function(response){response.json().then(function(data){result2=data
+						fetch('https://data.iledefrance.fr/api/records/1.0/search/?dataset=indemnites-des-elus-du-conseil-regional&q=uid_conseiller%3D%22'+uid+'%22&facet=groupe_politique&facet=fonction_executif&facet=membre_cp&facet=montant_mensuel_brut').then(function(response){response.json().then(function(data){result2=data
 						const sal = document.createElement('td')
 						sal.innerHTML = result2.records[0].fields.montant_mensuel_brut
 						document.querySelector("#"+a).appendChild(sal)
@@ -188,7 +188,7 @@
 			document.querySelector("#titre").appendChild(t7)
 				
 				var result
-				fetch('http://data.iledefrance.fr/api/records/1.0/search/?dataset=assiduite-des-elus&q=nom%3D%27'+a+'%27&sort=nom&facet=groupe_politique').then(function(response){response.json().then(function(data){result=data
+				fetch('https://data.iledefrance.fr/api/records/1.0/search/?dataset=assiduite-des-elus&q=nom%3D%27'+a+'%27&sort=nom&facet=groupe_politique').then(function(response){response.json().then(function(data){result=data
 				
 				for(var i = 0; i <= result.records.length ; i++){
 					const nom = document.createElement('td')
