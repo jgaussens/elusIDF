@@ -91,7 +91,7 @@
 				document.querySelector("table").appendChild(tr)
 				for(var j = 0; j<tab[i].length; j++){
 					if (j===0){
-							var site = "<a href = 'https://www.iledefrance.fr/elus/"+result.records[i].fields.prenom+"-"+result.records[i].fields.nom +"' target='_blank'>"+tab[i][j]+"</a>"
+							var site = "<a href = https://www.iledefrance.fr/elus/"+result.records[i].fields.prenom+"-"+result.records[i].fields.nom +" target='_blank'>"+tab[i][j]+"</a>"
 							const td = document.createElement('td')
 							td.innerHTML = site
 							document.querySelector("#"+a).appendChild(td)
