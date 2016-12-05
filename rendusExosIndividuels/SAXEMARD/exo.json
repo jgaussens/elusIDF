@@ -1,0 +1,8 @@
+{"Groupe":[
+"Personne1":{ "num": 001, "nom": "Saxémard", "prenom":"Elodie", "age":"23 ans", "mail":"elodie.saxemard@gmail.com", "tel":"0696440826", "collegue":[002,003, 004, 005]},
+"Personne2":{ "num": 002, "nom": "Kissous", "prenom":"Marion", "age":"32 ans", "mail":"marion.kissous@gmail.com", "tel":"0600000000", "collegue":[001,003, 004, 005]},
+"Personne3":{ "num": 003, "nom": "Assié", "prenom":"Fred", "age":"32 ans", "mail":"fred.assie@gmail.com", "tel":"0700000000", "collegue":[001, 002, 004, 005]},
+"Personne4":{ "num": 004, "nom" : "Gaussens", "prenom" : "Jules", "age":"21 ans", "mail":"gaussensjules@gmail.com", "collegue":[001, 002, 003, 005] },
+"Personne5":{"num" : 005, "nom" : "Lock-Fat", "prenom" : "Florian", "age":"21 ans", "mail":"florianlockfat@gmail.com", "collegue":[001, 002, 003, 004]}
+]
+}
