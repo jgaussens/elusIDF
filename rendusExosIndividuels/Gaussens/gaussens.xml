@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
+	<friends>
+		<friend>
+			<nom>GAUSSENS</nom>
+			<prenom>Jules</prenom>
+			<age>21</age>
+			<mail>gaussensjules@gmail.com</mail>
+		</friend>
+		<friend>
+			<nom>LOCK-FAT</nom>
+			<prenom>Florian</prenom>
+			<age>21</age>
+			<mail>flockfat@gmail.com</mail>
+		</friend>
+		<friend>
+			<nom>ASSIE</nom>
+			<prenom>Frédéric</prenom>
+			<age>89</age>
+			<mail>fassie@gmail.com</mail>
+		</friend>
+	</friends>
