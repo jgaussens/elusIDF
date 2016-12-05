@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
+
+<groupe>
+	<personne id=001>
+	<Nom>Saxémard</Nom>
+	<Prenom>Elodie</Prenom>
+	<Age>23</Age>
+	<Tel>0696440826</Tel>
+	<Email>elodie.saxemard@gmail.com</Email>
+	</personne>
+
+	<personne id=002>
+	<Nom>Kissous</Nom>
+	<Prenom>Marion</Prenom>
+	<Age>32</Age>
+	<Tel>0600000000</Tel>
+	<Email>marion.kissous@gmail.com</Email>
+	</personne>
+
+	<personne id=003>
+	<Nom>Assié</Nom>
+	<Prenom>Fred</Prenom>
+	<Age>32</Age>
+	<Tel>0700000000</Tel>
+	<Email>fred.assie@gmail.com</Email>
+	</personne>
+</groupe>
