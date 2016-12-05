@@ -1,0 +1,35 @@
+{"personnes": 
+
+	{ 
+		"_id" : 1, 
+		"Nom" : "LOCK-FAT", 
+		"Prénom" : "Florian", 
+		"Age": "21", 
+		"Email": "florianlockfat@gmail.com", 
+		"friends" : [
+		
+						{ 
+							"_id" : 2, 
+							"Nom" : "GAUSSENS", 
+							"Prénom" : "Jules", 
+							"Age":"21", 
+							"Email":"jgaussens@gmail.com" 
+						},
+						{ 
+							"_id" : 3, 
+							"Nom" : "ASSIE", 
+							"Prénom" : "Frederic", 
+							"Age":"89", 
+							"Email":"fassie@gmail.com" 
+						},
+						{ 
+							"_id" : 4, 
+							"Nom" : "Kissous", 
+							"Prénom" : "Marion", 
+							"Age":"38", 
+							"Email":"mkissous@gmail.com" 
+						}
+					] 
+	}
+
+}
