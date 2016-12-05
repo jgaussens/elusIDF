@@ -1,0 +1,29 @@
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/">
+
+<foaf:Person rdf:about="#Me">
+  <foaf:lastName>GAUSSENS</foaf:lastName>
+  <foaf:firstName>Jules</foaf:firstName>
+  <foaf:age>21</foaf:age>
+	<foaf:knows>
+		<foaf:Person rdf:about="#Florian">
+		  <foaf:lastName>Lock-Fat</foaf:lastName>
+		  <foaf:firstName>Florian</foaf:firstName>
+		  <foaf:age>21</foaf:age>
+		  <foaf:homepage rdf:resource="http://www.florianlockfat.com" />
+		  <foaf:openid rdf:resource="http://www.florianlockfat.com" />
+		  <foaf:img rdf:resource="http://www.florianlockfat.com" />
+		</foaf:Person>
+
+		<foaf:Person rdf:about="#Marion">
+		  <foaf:lastName>KISSOUS</foaf:lastName>
+		  <foaf:firstName>Marion</foaf:firstName>
+		  <foaf:age>88</foaf:age>
+		  <foaf:homepage rdf:resource="http://www.fredassie.com" />
+		  <foaf:openid rdf:resource="http://www.fredassie.com" />
+		</foaf:Person>
+	</foaf:knows>
+</foaf:Person>
+
+</rdf:RDF>
