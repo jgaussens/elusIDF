@@ -138,10 +138,10 @@
 						var result2
 						fetch('https://data.iledefrance.fr/api/records/1.0/search/?dataset=indemnites-des-elus-du-conseil-regional&q=uid_conseiller%3D%22'+uid+'%22&facet=groupe_politique&facet=fonction_executif&facet=membre_cp&facet=montant_mensuel_brut').then(function(response){response.json().then(function(data){result2=data
 						const sal = document.createElement('td')
-						sal.innerHTML = result2.records[0].fields.montant_mensuel_brut
+						sal.innerHTML = result2.records[0].fields.montant_mensuel_brut + "€"
 						document.querySelector("#"+a).appendChild(sal)
 						const moy = document.createElement('td')
-						moy.innerHTML =  ((result2.records[0].fields.montant_mensuel_brut * 6)/(pres-abs)).toFixed(2)
+						moy.innerHTML =  ((result2.records[0].fields.montant_mensuel_brut * 6)/(pres-abs)).toFixed(2) + "€"
 						document.querySelector("#"+a).appendChild(moy)
 						
 
