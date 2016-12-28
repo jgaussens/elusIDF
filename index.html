@@ -202,7 +202,7 @@
 					nom.innerHTML = result.records[i].fields.nom
 					prenom.innerHTML = result.records[i].fields.prenom
 					reu.innerHTML = result.records[i].fields.reunions_1er_semestre_2016
-					abs.innerHTML = result.records[i].fields.absences_non_justifiees
+					abs.innerHTML = result.records[i].fields.absences_non_justifiees * result.records[i].fields.reunions_1er_semestre_2016
 					parti.innerHTML = result.records[i].fields.groupe_politique
 					document.querySelector("#res").appendChild(nom)
 					document.querySelector("#res").appendChild(prenom)
