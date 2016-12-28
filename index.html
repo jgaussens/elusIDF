@@ -97,10 +97,17 @@
 							document.querySelector("#"+a).appendChild(td)
 		
 					}else{
+						if (j===2){
+							const td = document.createElement('td')
+							td.innerHTML = tab[i][j] + "%"
+							document.querySelector("#"+a).appendChild(td)
+						}else{
+							
 					
 						const td = document.createElement('td')
 						td.innerHTML = tab[i][j]
 						document.querySelector("#"+a).appendChild(td)
+						}
 					}
 					if (j===3){
 						taux(result.records[i].fields.absences_non_justifiees,result.records[i].fields.reunions_1er_semestre_2016,a)
